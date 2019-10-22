@@ -1,0 +1,14 @@
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\bin\Debug\netcoreapp2.2\SmartUrl.Api.deps.json
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\bin\Debug\netcoreapp2.2\SmartUrl.Api.runtimeconfig.json
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\bin\Debug\netcoreapp2.2\SmartUrl.Api.runtimeconfig.dev.json
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\bin\Debug\netcoreapp2.2\SmartUrl.Api.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\bin\Debug\netcoreapp2.2\SmartUrl.Api.pdb
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\obj\Debug\netcoreapp2.2\SmartUrl.Api.csprojAssemblyReference.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\obj\Debug\netcoreapp2.2\SmartUrl.Api.csproj.CoreCompileInputs.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\obj\Debug\netcoreapp2.2\SmartUrl.Api.RazorAssemblyInfo.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\obj\Debug\netcoreapp2.2\SmartUrl.Api.RazorAssemblyInfo.cs
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\obj\Debug\netcoreapp2.2\SmartUrl.Api.AssemblyInfoInputs.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\obj\Debug\netcoreapp2.2\SmartUrl.Api.AssemblyInfo.cs
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\obj\Debug\netcoreapp2.2\SmartUrl.Api.RazorTargetAssemblyInfo.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\obj\Debug\netcoreapp2.2\SmartUrl.Api.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Api\obj\Debug\netcoreapp2.2\SmartUrl.Api.pdb

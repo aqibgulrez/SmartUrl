@@ -1,0 +1,26 @@
+﻿@using SmartUrl.Entities.Domain
+
+@model SmartUrlEntity
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form asp-action="Index" method="post" role="form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Url" class="col-md-12 control-label"></label>
+            <div class="col-md-12">
+                <input asp-for="Url" class="form-control" />
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-default" value="Make SmartUrl!" />
+            </div>
+        </div>
+    </form>
+</div>

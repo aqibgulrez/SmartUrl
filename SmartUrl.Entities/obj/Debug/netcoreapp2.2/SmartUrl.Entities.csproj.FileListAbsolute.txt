@@ -1,0 +1,9 @@
+D:\Personal\Projects\SmartUrl\SmartUrl.Entities\bin\Debug\netcoreapp2.2\SmartUrl.Entities.deps.json
+D:\Personal\Projects\SmartUrl\SmartUrl.Entities\bin\Debug\netcoreapp2.2\SmartUrl.Entities.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Entities\obj\Debug\netcoreapp2.2\SmartUrl.Entities.csproj.CoreCompileInputs.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Entities\obj\Debug\netcoreapp2.2\SmartUrl.Entities.AssemblyInfoInputs.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Entities\obj\Debug\netcoreapp2.2\SmartUrl.Entities.AssemblyInfo.cs
+D:\Personal\Projects\SmartUrl\SmartUrl.Entities\obj\Debug\netcoreapp2.2\SmartUrl.Entities.csprojAssemblyReference.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Entities\bin\Debug\netcoreapp2.2\SmartUrl.Entities.pdb
+D:\Personal\Projects\SmartUrl\SmartUrl.Entities\obj\Debug\netcoreapp2.2\SmartUrl.Entities.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Entities\obj\Debug\netcoreapp2.2\SmartUrl.Entities.pdb
