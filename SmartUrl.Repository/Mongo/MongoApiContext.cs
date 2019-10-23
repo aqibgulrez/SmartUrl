@@ -1,5 +1,4 @@
 ﻿using MongoDB.Driver;
-using SmartUrl.Entities.AppConfig;
 using SmartUrl.Entities.Domain;
 using System;
 using System.Collections.Generic;

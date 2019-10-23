@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SmartUrl.Entities\SmartUrl.Entities.csproj" />
+    <ProjectReference Include="..\SmartUrl.Repository\SmartUrl.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

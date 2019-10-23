@@ -7,3 +7,8 @@ D:\Personal\Projects\SmartUrl\SmartUrl.Services\obj\Debug\netcoreapp2.2\SmartUrl
 D:\Personal\Projects\SmartUrl\SmartUrl.Services\obj\Debug\netcoreapp2.2\SmartUrl.Services.AssemblyInfo.cs
 D:\Personal\Projects\SmartUrl\SmartUrl.Services\obj\Debug\netcoreapp2.2\SmartUrl.Services.dll
 D:\Personal\Projects\SmartUrl\SmartUrl.Services\obj\Debug\netcoreapp2.2\SmartUrl.Services.pdb
+D:\Personal\Projects\SmartUrl\SmartUrl.Services\bin\Debug\netcoreapp2.2\SmartUrl.Entities.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Services\bin\Debug\netcoreapp2.2\SmartUrl.Repository.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Services\bin\Debug\netcoreapp2.2\SmartUrl.Entities.pdb
+D:\Personal\Projects\SmartUrl\SmartUrl.Services\bin\Debug\netcoreapp2.2\SmartUrl.Repository.pdb
+D:\Personal\Projects\SmartUrl\SmartUrl.Services\obj\Debug\netcoreapp2.2\SmartUrl.Services.csproj.CopyComplete

@@ -11,6 +11,14 @@ namespace SmartUrl.Web.Controllers
 {
     public class HomeController : Controller
     {
+        //private readonly IOrderRepository _orderRepository;
+ 
+        //public HomeController(IOrderRepository orderRepository, ShoppingCart shoppingCart)
+        //{
+        //    _orderRepository = orderRepository;
+        //    _shoppingCart = shoppingCart;
+        //}
+
         public IActionResult Index()
         {
             return View();
@@ -20,6 +28,11 @@ namespace SmartUrl.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Index(SmartUrlEntity objSmartUrlEntity)
         {
+            if (ModelState.IsValid)
+            {
+
+            }
+
             return View();
         }
 

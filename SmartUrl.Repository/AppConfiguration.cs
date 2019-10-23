@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartUrl.Entities.AppConfig
+namespace SmartUrl.Repository
 {
     public static class AppConfiguration
     {
@@ -13,7 +13,7 @@ namespace SmartUrl.Entities.AppConfig
         {
             currentConfig = configuration;
         }
- 
+
         public static string GetConfiguration(string configKey)
         {
             try

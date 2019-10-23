@@ -73,5 +73,18 @@ namespace SmartUrl.Repository.Mongo
                 throw;
             }
         }
+
+        public async Task<SmartUrlEntity> GetSmartUrlByShort(string shortUrl)
+        {
+            try
+            {
+                FilterDefinition<SmartUrlEntity> filter = Builders<SmartUrlEntity>.Filter.Eq("ShortUrl", shortUrl);
+                return await db.SmartUrl.Find(filter).FirstOrDefaultAsync();
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SmartUrl.Entities.AppConfig;
 using SmartUrl.Repository;
 using SmartUrl.Repository.Mongo;
 
@@ -34,9 +33,10 @@ namespace SmartUrl.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
- 
+            services.AddMemoryCache();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
+            services.AddResponseCaching();
+ 
             services.AddSingleton(_ => Configuration);
 
             services.AddScoped<IDataProvider, MongoApiProvider>();
@@ -62,12 +62,19 @@ namespace SmartUrl.Web
 
             AppConfiguration.SetConfig(Configuration);
 
-            app.UseMvc(routes =>
+            app.UseMvc(
+            routes =>
             {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}");
+
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    "NavigateTo",
+                    "{actionURL}",
+                    new { controller = "Navigate", action = "NavigateTo" }
+                );
             });
+
+            app.UseResponseCaching();
         }
     }
 }
