@@ -8,7 +8,7 @@ namespace SmartUrl.Services
 {
     public interface IShortUrlService
     {
-        Task<SmartUrlEntity> CreateSmartUrl(string url, string scheme, string host, string pathBase);
+        Task<SmartUrlEntity> CreateSmartUrl(string url);
         Task<SmartUrlEntity> GetSmartUrl(string urlKey);
     }
 }

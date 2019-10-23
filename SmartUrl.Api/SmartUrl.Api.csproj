@@ -10,4 +10,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SmartUrl.Entities\SmartUrl.Entities.csproj" />
+    <ProjectReference Include="..\SmartUrl.Repository\SmartUrl.Repository.csproj" />
+    <ProjectReference Include="..\SmartUrl.Services\SmartUrl.Services.csproj" />
+  </ItemGroup>
+
 </Project>

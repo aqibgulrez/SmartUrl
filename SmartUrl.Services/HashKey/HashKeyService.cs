@@ -22,47 +22,10 @@ namespace SmartUrl.Services.HashKey
             _dataProvider = dataProvider;
         }
 
-        public async Task<SmartUrlEntity> CreateSmartUrl(string url, string scheme, string host, string pathBase)
+        public async Task<SmartUrlEntity> CreateSmartUrl(string url)
         {
-            SmartUrlEntity objSmartUrlEntity = null;
-            string urlHash = CalculateMD5Hash(url);
-
-            objSmartUrlEntity = await _dataProvider.GetSmartUrlByHashAsync(urlHash);
-
-            if (objSmartUrlEntity != null)
-            {
-                objSmartUrlEntity.IsSuccess = true;
-                return objSmartUrlEntity;
-            }
-
-            objSmartUrlEntity = await _dataProvider.GetSmartUrlByShortAsync(url);
-
-            if (objSmartUrlEntity != null)
-            {
-                objSmartUrlEntity.IsSuccess = true;
-                objSmartUrlEntity.IsShortUrl = true;
-                return objSmartUrlEntity;
-            }
-
-            var uniqueUrlKey = GenerateUniqueUrlKey();
-
-            if (!string.IsNullOrEmpty(uniqueUrlKey))
-            {
-                objSmartUrlEntity = new SmartUrlEntity();
-                objSmartUrlEntity.UrlKey = uniqueUrlKey;
-                objSmartUrlEntity.Url = url;
-                objSmartUrlEntity.UrlHash = urlHash;
-                objSmartUrlEntity.ShortUrl = new Uri(scheme + "://" + host + pathBase + "/" + uniqueUrlKey).ToString();
-
-                await _dataProvider.Add(objSmartUrlEntity);
-                objSmartUrlEntity.IsSuccess = true;
-                return objSmartUrlEntity;
-            }
-
-            objSmartUrlEntity.IsSuccess = false;
-            return objSmartUrlEntity;
+            return await GenerateSmartUrl(url, _managedConfig.ApplicationPath);
         }
-
         public async Task<SmartUrlEntity> GetSmartUrl(string urlKey)
         {
             return await _dataProvider.GetSmartUrlByKey(urlKey);
@@ -141,7 +104,7 @@ namespace SmartUrl.Services.HashKey
 
             return uniqueKey;
         }
-        public string CalculateMD5Hash(string input)
+        private string CalculateMD5Hash(string input)
         {
             // step 1, calculate MD5 hash from input
             MD5 md5 = System.Security.Cryptography.MD5.Create();
@@ -155,6 +118,46 @@ namespace SmartUrl.Services.HashKey
                 sb.Append(hash[i].ToString("X2"));
             }
             return sb.ToString();
+        }
+        private async Task<SmartUrlEntity> GenerateSmartUrl(string url,string path)
+        {
+            SmartUrlEntity objSmartUrlEntity = null;
+            string urlHash = CalculateMD5Hash(url);
+
+            objSmartUrlEntity = await _dataProvider.GetSmartUrlByHashAsync(urlHash);
+
+            if (objSmartUrlEntity != null)
+            {
+                objSmartUrlEntity.IsSuccess = true;
+                return objSmartUrlEntity;
+            }
+
+            objSmartUrlEntity = await _dataProvider.GetSmartUrlByShortAsync(url);
+
+            if (objSmartUrlEntity != null)
+            {
+                objSmartUrlEntity.IsSuccess = true;
+                objSmartUrlEntity.IsShortUrl = true;
+                return objSmartUrlEntity;
+            }
+
+            var uniqueUrlKey = GenerateUniqueUrlKey();
+
+            if (!string.IsNullOrEmpty(uniqueUrlKey))
+            {
+                objSmartUrlEntity = new SmartUrlEntity();
+                objSmartUrlEntity.UrlKey = uniqueUrlKey;
+                objSmartUrlEntity.Url = url;
+                objSmartUrlEntity.UrlHash = urlHash;
+                objSmartUrlEntity.ShortUrl = new Uri(string.Format(path, uniqueUrlKey)).ToString();
+
+                await _dataProvider.Add(objSmartUrlEntity);
+                objSmartUrlEntity.IsSuccess = true;
+                return objSmartUrlEntity;
+            }
+
+            objSmartUrlEntity.IsSuccess = false;
+            return objSmartUrlEntity;
         }
     }
 }

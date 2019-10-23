@@ -9,5 +9,6 @@ namespace SmartUrl.Services
         public int KeyLength { get; set; }
         public int CollisionIterations { get; set; }
         public int UniqueUrlKeyIterations { get; set; }
+        public string ApplicationPath { get; set; }
     }
 }

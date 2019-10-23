@@ -24,13 +24,13 @@ namespace SmartUrl.Web.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost()]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(HomeCreateRequestModel objHomeCreateUrlModel)
         {
             if (ModelState.IsValid)
             {
-                var objShortUrl = await _shortUrlService.CreateSmartUrl(objHomeCreateUrlModel.Url, Request.Scheme, Request.Host.Value, Request.PathBase);
+                var objShortUrl = await _shortUrlService.CreateSmartUrl(objHomeCreateUrlModel.Url);
 
                 return View("ShortUrlSuccess", new HomeCreateResponseModel() {
                     Url = objShortUrl.Url,

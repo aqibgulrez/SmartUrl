@@ -78,7 +78,7 @@ namespace SmartUrl.Web
             routes =>
             {
                 routes.MapRoute("default", "{controller=Home}/{action=Index}");
-
+ 
                 routes.MapRoute(
                     "NavigateTo",
                     "{actionURL}",

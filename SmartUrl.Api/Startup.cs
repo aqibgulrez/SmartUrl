@@ -6,10 +6,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SmartUrl.Repository;
+using SmartUrl.Repository.SQL;
+using SmartUrl.Services;
+using SmartUrl.Services.HashKey;
 
 namespace SmartUrl.Api
 {
@@ -26,6 +31,18 @@ namespace SmartUrl.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            var connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<SQLApiContext>(options => options.UseSqlServer(connection));
+
+            services.AddScoped<IDataProvider, SQLApiProvider>();
+            //services.AddScoped<IDataProvider, MongoApiProvider>();
+
+            services.AddSingleton(_ => Configuration);
+            services.Configure<ManagedConfig>(Configuration);
+
+
+            services.AddScoped<IShortUrlService, HashKeyService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
