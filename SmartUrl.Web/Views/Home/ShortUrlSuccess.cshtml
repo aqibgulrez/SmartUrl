@@ -1,0 +1,38 @@
+﻿@model HomeCreateResponseModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShortUrlSuccess</title>
+</head>
+<body>
+    <h1>URL Shortener</h1>
+    <br />
+    <p>You can see below the details of this short URL.</p>
+    <br />
+    <ul>
+        <li>
+            <span class="col-md-2">
+                <strong>Original URL:</strong>
+            </span>
+            <a href="@Model.Url">
+                @Model.Url
+            </a>
+        </li>
+        <li>
+            <span class="col-md-2">
+                <strong>Short URL:</strong>
+            </span>
+            <a href="@Model.ShortUrl">
+                @Model.ShortUrl
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

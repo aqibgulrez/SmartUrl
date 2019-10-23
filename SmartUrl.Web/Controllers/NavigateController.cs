@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SmartUrl.Services;
 
 namespace SmartUrl.Web.Controllers
 {
@@ -10,17 +11,23 @@ namespace SmartUrl.Web.Controllers
     [Route("/")]
     public class NavigateController : Controller
     {
+        private readonly IShortUrlService _shortUrlService;
+
+        public NavigateController(IShortUrlService shortUrlService)
+        {
+            _shortUrlService = shortUrlService;
+        }
+
         [ResponseCache(Duration = 60 * 60 * 48, Location = ResponseCacheLocation.Client)]
         [HttpGet("/{key}")]
-        public IActionResult NavigateTo(string key)
+        public async Task<IActionResult> NavigateTo(string key)
         {
-            //var data = await _database.GetData(key);
-            //if (data != null && (!data.ExpiresUtc.HasValue || DateTime.UtcNow < data.ExpiresUtc.Value))
-            //{
-            //    await _database.LogAccess(key, Request.HttpContext.Connection.RemoteIpAddress);
-            //    var url = UrlKeyReplacementRegex.Replace(data.Url, key);
-            //    return Redirect(url);
-            //}
+            var data = await _shortUrlService.GetSmartUrl(key);
+
+            if (data != null)
+            {
+                return Redirect(data.Url);
+            }
 
             return View("UrlNotFound", key);
         }

@@ -9,10 +9,9 @@ namespace SmartUrl.Repository
     public interface IDataProvider
     {
         Task Add(SmartUrlEntity smartUrl);
-        Task<SmartUrlEntity> GetSmartUrl(string id);
-        Task<IEnumerable<SmartUrlEntity>> GetSmartUrls();
+        Task<SmartUrlEntity> GetSmartUrlAsync(int id);
         Task<SmartUrlEntity> GetSmartUrlByKey(string urlKey);
-        Task<SmartUrlEntity> GetSmartUrlByHash(string urlHash);
-        Task<SmartUrlEntity> GetSmartUrlByShort(string shortUrl);
+        Task<SmartUrlEntity> GetSmartUrlByHashAsync(string urlHash);
+        Task<SmartUrlEntity> GetSmartUrlByShortAsync(string shortUrl);
     }
 }

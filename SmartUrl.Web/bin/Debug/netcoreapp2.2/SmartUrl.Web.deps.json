@@ -29,7 +29,8 @@
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
           "SmartUrl.Entities": "1.0.0",
-          "SmartUrl.Repository": "1.0.0"
+          "SmartUrl.Repository": "1.0.0",
+          "SmartUrl.Services": "1.0.0"
         },
         "runtime": {
           "SmartUrl.Web.dll": {}
@@ -981,6 +982,7 @@
       },
       "SmartUrl.Repository/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.0",
           "MongoDB.Driver": "2.9.2",
           "SmartUrl.Entities": "1.0.0"
         },
@@ -989,6 +991,19 @@
         },
         "compile": {
           "SmartUrl.Repository.dll": {}
+        }
+      },
+      "SmartUrl.Services/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "2.2.0",
+          "SmartUrl.Entities": "1.0.0",
+          "SmartUrl.Repository": "1.0.0"
+        },
+        "runtime": {
+          "SmartUrl.Services.dll": {}
+        },
+        "compile": {
+          "SmartUrl.Services.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -4353,6 +4368,11 @@
       "sha512": ""
     },
     "SmartUrl.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SmartUrl.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

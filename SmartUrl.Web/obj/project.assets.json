@@ -5115,6 +5115,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.0",
           "MongoDB.Driver": "2.9.2",
           "SmartUrl.Entities": "1.0.0"
         },
@@ -5123,6 +5124,21 @@
         },
         "runtime": {
           "bin/placeholder/SmartUrl.Repository.dll": {}
+        }
+      },
+      "SmartUrl.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "2.2.0",
+          "SmartUrl.Entities": "1.0.0",
+          "SmartUrl.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SmartUrl.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartUrl.Services.dll": {}
         }
       }
     }
@@ -13920,6 +13936,11 @@
       "type": "project",
       "path": "../SmartUrl.Repository/SmartUrl.Repository.csproj",
       "msbuildProject": "../SmartUrl.Repository/SmartUrl.Repository.csproj"
+    },
+    "SmartUrl.Services/1.0.0": {
+      "type": "project",
+      "path": "../SmartUrl.Services/SmartUrl.Services.csproj",
+      "msbuildProject": "../SmartUrl.Services/SmartUrl.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13929,7 +13950,8 @@
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
       "SmartUrl.Entities >= 1.0.0",
-      "SmartUrl.Repository >= 1.0.0"
+      "SmartUrl.Repository >= 1.0.0",
+      "SmartUrl.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13967,6 +13989,9 @@
             },
             "D:\\Personal\\Projects\\SmartUrl\\SmartUrl.Repository\\SmartUrl.Repository.csproj": {
               "projectPath": "D:\\Personal\\Projects\\SmartUrl\\SmartUrl.Repository\\SmartUrl.Repository.csproj"
+            },
+            "D:\\Personal\\Projects\\SmartUrl\\SmartUrl.Services\\SmartUrl.Services.csproj": {
+              "projectPath": "D:\\Personal\\Projects\\SmartUrl\\SmartUrl.Services\\SmartUrl.Services.csproj"
             }
           }
         }

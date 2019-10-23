@@ -32,3 +32,6 @@ D:\Personal\Projects\SmartUrl\SmartUrl.Web\bin\Debug\netcoreapp2.2\SmartUrl.Repo
 D:\Personal\Projects\SmartUrl\SmartUrl.Web\bin\Debug\netcoreapp2.2\SmartUrl.Entities.pdb
 D:\Personal\Projects\SmartUrl\SmartUrl.Web\bin\Debug\netcoreapp2.2\SmartUrl.Repository.pdb
 D:\Personal\Projects\SmartUrl\SmartUrl.Web\obj\Debug\netcoreapp2.2\Razor\Views\Navigate\UrlNotFound.g.cshtml.cs
+D:\Personal\Projects\SmartUrl\SmartUrl.Web\bin\Debug\netcoreapp2.2\SmartUrl.Services.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Web\bin\Debug\netcoreapp2.2\SmartUrl.Services.pdb
+D:\Personal\Projects\SmartUrl\SmartUrl.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\ShortUrlSuccess.g.cshtml.cs

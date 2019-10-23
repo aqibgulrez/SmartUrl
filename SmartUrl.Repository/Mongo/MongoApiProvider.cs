@@ -23,7 +23,7 @@ namespace SmartUrl.Repository.Mongo
             }
         }
 
-        public async Task<SmartUrlEntity> GetSmartUrlByHash(string urlHash)
+        public async Task<SmartUrlEntity> GetSmartUrlByHashAsync(string urlHash)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace SmartUrl.Repository.Mongo
             }
         }
 
-        public async Task<SmartUrlEntity> GetSmartUrl(string id)
+        public async Task<SmartUrlEntity> GetSmartUrlAsync(int id)
         {
             try
             {
@@ -62,19 +62,7 @@ namespace SmartUrl.Repository.Mongo
             }
         }
 
-        public async Task<IEnumerable<SmartUrlEntity>> GetSmartUrls()
-        {
-            try
-            {
-                return await db.SmartUrl.Find(_ => true).ToListAsync();
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
-        public async Task<SmartUrlEntity> GetSmartUrlByShort(string shortUrl)
+        public async Task<SmartUrlEntity> GetSmartUrlByShortAsync(string shortUrl)
         {
             try
             {
