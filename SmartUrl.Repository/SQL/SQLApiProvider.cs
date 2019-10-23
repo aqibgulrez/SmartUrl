@@ -25,22 +25,22 @@ namespace SmartUrl.Repository.SQL
 
         public async Task<SmartUrlEntity> GetSmartUrlAsync(int id)
         {
-            return await _db.SmartUrl.Where(at => at.Id == id).FirstOrDefaultAsync();
+            return await _db.SmartUrl.SingleOrDefaultAsync(at => at.Id == id);
         }
 
         public async Task<SmartUrlEntity> GetSmartUrlByHashAsync(string urlHash)
         {
-            return await _db.SmartUrl.Where(at => at.UrlHash == urlHash).FirstOrDefaultAsync();
+            return await _db.SmartUrl.SingleOrDefaultAsync(at => at.UrlHash == urlHash);
         }
 
         public async Task<SmartUrlEntity> GetSmartUrlByKey(string urlKey)
         {
-            return await _db.SmartUrl.Where(at => at.UrlKey == urlKey).FirstOrDefaultAsync();
+            return await _db.SmartUrl.SingleOrDefaultAsync(at => at.UrlKey == urlKey);
         }
 
         public async Task<SmartUrlEntity> GetSmartUrlByShortAsync(string shortUrl)
         {
-            return await _db.SmartUrl.Where(at => at.ShortUrl == shortUrl).FirstOrDefaultAsync();
+            return await _db.SmartUrl.SingleOrDefaultAsync(at => at.ShortUrl == shortUrl);
         }
     }
 }

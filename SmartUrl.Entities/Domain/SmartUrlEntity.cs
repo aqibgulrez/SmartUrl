@@ -24,6 +24,7 @@ namespace SmartUrl.Entities.Domain
         [JsonIgnore]
         public string UrlKey { get; set; }
         [JsonProperty(PropertyName = "shorturl")]
+        [NotMapped]
         public string ShortUrl { get; set; }
         [NotMapped]
         public bool IsSuccess { get; set; }

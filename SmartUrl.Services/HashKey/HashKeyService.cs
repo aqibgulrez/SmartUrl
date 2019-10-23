@@ -63,43 +63,18 @@ namespace SmartUrl.Services.HashKey
             string uniqueKey = string.Empty;
 
             var randomLength = _managedConfig.KeyLength;
-            var testIterations = _managedConfig.CollisionIterations;
             var mainInterations = _managedConfig.UniqueUrlKeyIterations;
+            var uniqueKeyTryCount = 0;
 
-            while (mainInterations > 0)
+            while (uniqueKeyTryCount++ < mainInterations && string.IsNullOrEmpty(uniqueKey))
             {
-                Dictionary<string, int> collisionTestHash = new Dictionary<string, int>();
+                var data = GenerateRandomString(randomLength);
 
-                for (int index = 0; index < testIterations; index++)
+                if (!string.IsNullOrEmpty(data) && _dataProvider.GetSmartUrlByKey(data) == null)
                 {
-                    var data = GenerateRandomString(randomLength);
-
-                    if (collisionTestHash.ContainsKey(data))
-                    {
-
-                        collisionTestHash[data] = collisionTestHash[data] + 1;
-                    }
-                    else
-                    {
-                        collisionTestHash.Add(data, 1);
-                    }
-                }
-
-                foreach (KeyValuePair<string, int> kvp in collisionTestHash)
-                {
-                    if (kvp.Value == 1)
-                    {
-                        uniqueKey = kvp.Key;
-                        break;
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(uniqueKey) && _dataProvider.GetSmartUrlByKey(uniqueKey) == null)
-                {
+                    uniqueKey = data;
                     break;
                 }
-
-                mainInterations--;
             }
 
             return uniqueKey;
@@ -156,6 +131,7 @@ namespace SmartUrl.Services.HashKey
                 return objSmartUrlEntity;
             }
 
+            objSmartUrlEntity = new SmartUrlEntity();
             objSmartUrlEntity.IsSuccess = false;
             return objSmartUrlEntity;
         }
