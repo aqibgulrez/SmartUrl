@@ -1,0 +1,14 @@
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.pdb
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\bin\Debug\netcoreapp2.2\nunit.engine.netstandard.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\bin\Debug\netcoreapp2.2\SmartUrl.Web.Test.deps.json
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\bin\Debug\netcoreapp2.2\SmartUrl.Web.Test.runtimeconfig.json
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\bin\Debug\netcoreapp2.2\SmartUrl.Web.Test.runtimeconfig.dev.json
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\bin\Debug\netcoreapp2.2\SmartUrl.Web.Test.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\bin\Debug\netcoreapp2.2\SmartUrl.Web.Test.pdb
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\obj\Debug\netcoreapp2.2\SmartUrl.Web.Test.csprojAssemblyReference.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\obj\Debug\netcoreapp2.2\SmartUrl.Web.Test.csproj.CoreCompileInputs.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\obj\Debug\netcoreapp2.2\SmartUrl.Web.Test.AssemblyInfoInputs.cache
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\obj\Debug\netcoreapp2.2\SmartUrl.Web.Test.AssemblyInfo.cs
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\obj\Debug\netcoreapp2.2\SmartUrl.Web.Test.dll
+D:\Personal\Projects\SmartUrl\SmartUrl.Web.Test\obj\Debug\netcoreapp2.2\SmartUrl.Web.Test.pdb
