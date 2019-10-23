@@ -77,7 +77,7 @@ namespace SmartUrl.Services.Test
             var dataProviderMock = new Mock<IDataProvider>();
             dataProviderMock.Setup(a => a.GetSmartUrlByHash(It.IsAny<string>()))
               .Returns(Task.FromResult((SmartUrlEntity)null));
-            dataProviderMock.Setup(a => a.GetSmartUrlByKey(It.Is<string>(m => m.Equals(_url))))
+            dataProviderMock.Setup(a => a.GetSmartUrlByKey(It.IsAny<string>()))
           .Returns(Task.FromResult(smartUriResponse));
 
             var sut = new HashKeyService(managedConfig, dataProviderMock.Object);
@@ -90,7 +90,7 @@ namespace SmartUrl.Services.Test
             // Assert
             result.Id.ShouldBeEqualTo(smartUriResponse.Id);
             dataProviderMock.Verify(a => a.GetSmartUrlByHash(It.IsAny<string>()), Times.Once);
-            dataProviderMock.Verify(a => a.GetSmartUrlByKey(It.Is<string>(m => m.Equals(_url))), Times.Once);
+            dataProviderMock.Verify(a => a.GetSmartUrlByKey(It.IsAny<string>()), Times.Once);
 
         }
 
@@ -102,8 +102,6 @@ namespace SmartUrl.Services.Test
             var dataProviderMock = new Mock<IDataProvider>();
             dataProviderMock.Setup(a => a.GetSmartUrlByHash(It.IsAny<string>()))
               .Returns(Task.FromResult((SmartUrlEntity)null));
-            dataProviderMock.Setup(a => a.GetSmartUrlByKey(It.Is<string>(m => m.Equals(_url))))
-          .Returns(Task.FromResult((SmartUrlEntity)null));
             dataProviderMock.Setup(a => a.GetSmartUrlByKey(It.IsAny<string>()))
              .Returns(Task.FromResult(smartUriResponse));
             dataProviderMock.Setup(a => a.Add(It.IsAny<SmartUrlEntity>()))
@@ -133,8 +131,6 @@ namespace SmartUrl.Services.Test
               .Returns(Task.FromResult((SmartUrlEntity)null));
             dataProviderMock.Setup(a => a.GetSmartUrlByKey(It.IsAny<string>()))
           .Returns(Task.FromResult((SmartUrlEntity)null));
-            dataProviderMock.Setup(a => a.GetSmartUrlByKey(It.IsAny<string>()))
-             .Returns(Task.FromResult((SmartUrlEntity)null));
 
             var sut = new HashKeyService(managedConfig, dataProviderMock.Object);
 
