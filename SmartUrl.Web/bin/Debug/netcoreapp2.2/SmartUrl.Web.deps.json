@@ -983,6 +983,8 @@
       "SmartUrl.Repository/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.EntityFrameworkCore.Design": "2.2.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0",
           "MongoDB.Driver": "2.9.2",
           "SmartUrl.Entities": "1.0.0"
         },

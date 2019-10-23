@@ -14,5 +14,7 @@ namespace SmartUrl.Repository.SQL
         }
 
         public DbSet<SmartUrlEntity> SmartUrl { get; set; }
+
+  
     }
 }

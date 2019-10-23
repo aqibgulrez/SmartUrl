@@ -39,7 +39,10 @@ namespace SmartUrl.Web
 
             services.AddMemoryCache();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddResponseCaching();
+            services.AddResponseCaching(options =>
+            {
+                options.UseCaseSensitivePaths = true;
+            });
 
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<SQLApiContext>(options => options.UseSqlServer(connection));

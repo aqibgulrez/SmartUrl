@@ -10,3 +10,5 @@ D:\Personal\Projects\SmartUrl\SmartUrl.Repository\obj\Debug\netcoreapp2.2\SmartU
 D:\Personal\Projects\SmartUrl\SmartUrl.Repository\bin\Debug\netcoreapp2.2\SmartUrl.Repository.pdb
 D:\Personal\Projects\SmartUrl\SmartUrl.Repository\obj\Debug\netcoreapp2.2\SmartUrl.Repository.dll
 D:\Personal\Projects\SmartUrl\SmartUrl.Repository\obj\Debug\netcoreapp2.2\SmartUrl.Repository.pdb
+D:\Personal\Projects\SmartUrl\SmartUrl.Repository\bin\Debug\netcoreapp2.2\SmartUrl.Repository.runtimeconfig.json
+D:\Personal\Projects\SmartUrl\SmartUrl.Repository\bin\Debug\netcoreapp2.2\SmartUrl.Repository.runtimeconfig.dev.json
