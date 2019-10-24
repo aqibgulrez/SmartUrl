@@ -103,7 +103,7 @@ namespace SmartUrl.Services.Test
             dataProviderMock.Setup(a => a.GetSmartUrlByHash(It.IsAny<string>()))
               .Returns(Task.FromResult((SmartUrlEntity)null));
             dataProviderMock.Setup(a => a.GetSmartUrlByKey(It.IsAny<string>()))
-             .Returns(Task.FromResult(smartUriResponse));
+             .Returns(Task.FromResult((SmartUrlEntity)null));
             dataProviderMock.Setup(a => a.Add(It.IsAny<SmartUrlEntity>()))
            .Returns(Task.FromResult(0));
 
@@ -111,13 +111,12 @@ namespace SmartUrl.Services.Test
 
 
             // Act
-            var result = await sut.CreateSmartUrl(_url);
+            var result = await sut.CreateSmartUrl(string.Empty);
 
 
             // Assert
-            result.Url.ShouldBeEqualTo(smartUriResponse.Url);
+            result.ShortUrl.ShouldContain("https://localhost:44390");
             dataProviderMock.Verify(a => a.GetSmartUrlByHash(It.IsAny<string>()), Times.Once);
-            dataProviderMock.Verify(a => a.GetSmartUrlByKey(It.IsAny<string>()), Times.Exactly(5));
             dataProviderMock.Verify(a => a.Add(It.IsAny<SmartUrlEntity>()), Times.Once);
         }
 
@@ -142,7 +141,6 @@ namespace SmartUrl.Services.Test
             // Assert
             result.Id.ShouldBeEqualTo(0);
             dataProviderMock.Verify(a => a.GetSmartUrlByHash(It.IsAny<string>()), Times.Once);
-            dataProviderMock.Verify(a => a.GetSmartUrlByKey(It.IsAny<string>()), Times.Once);
         }
     }
 }
